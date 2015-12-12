@@ -142,7 +142,7 @@ use yii\rest\ActiveController;
 class UserController extends ActiveController
 {
     /** @inheritdoc */
-    public $serializer = 'frostealth\yii2\rest\Serializer';
+    public $serializer = 'frostealth\yii2\presenter\rest\Serializer';
     
     /** @inheritdoc */
     public $className = 'app\models\User';
