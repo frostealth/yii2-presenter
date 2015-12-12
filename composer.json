@@ -1,0 +1,27 @@
+{
+    "name": "frostealth/yii2-presenter",
+    "description": "Yii2 View Presenter",
+    "keywords": ["yii2", "presenter"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Kudinov",
+            "email": "i.kudinov@frostealth.ru",
+            "homepage": "http://frostealth.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "yiisoft/yii2": "~2.0",
+        "frostealth/php-presenter": "~0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "frostealth\\yii2\\presenter\\": "src/"
+        }
+    },
+    "extra": {
+        "bootstrap": "frostealth\\yii2\\presenter\\Bootstrap"
+    }
+}
