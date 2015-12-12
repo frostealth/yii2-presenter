@@ -83,7 +83,7 @@ namespace app\models;
 
 use app\presenters\UserPresenter;
 use frostealth\presenter\interfaces\PresentableInterface;
-use frostealth\presenter\traits\PresentableTrait;
+use frostealth\yii2\presenter\traits\PresentableTrait;
 
 /**
  * Class User

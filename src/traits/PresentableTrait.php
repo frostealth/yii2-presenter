@@ -45,8 +45,7 @@ trait PresentableTrait
 
         $presenter = $this->presenter;
         $presenter = is_string($presenter) ? ['class' => $presenter] : (array)$presenter;
-        $presenter['entity'] = $this;
-        $presenter = \Yii::createObject($presenter);
+        $presenter = \Yii::createObject($presenter, [$this]);
 
         if (!$presenter instanceof PresenterInterface) {
             throw new PresenterException(strtr(
