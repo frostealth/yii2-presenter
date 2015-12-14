@@ -17,6 +17,16 @@ class Serializer extends BaseSerializer
     /**
      * @inheritDoc
      */
+    protected function serializeModel($model)
+    {
+        $model = $this->decorate($model);
+
+        return parent::serializeModel($model);
+    }
+
+    /**
+     * @inheritDoc
+     */
     protected function serializeModels(array $models)
     {
         $models = $this->decorate($models);
