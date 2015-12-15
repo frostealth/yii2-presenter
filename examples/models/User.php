@@ -32,9 +32,6 @@ class User extends ActiveRecord implements PresentableInterface
 {
     use PresentableTrait;
 
-    /** @var string */
-    protected $presenter = 'app\presenters\UserPresenter';
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -49,5 +46,13 @@ class User extends ActiveRecord implements PresentableInterface
     public function getFather()
     {
         return $this->hasOne(get_called_class(), ['id' => 'fatherId']);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function getPresenterClass()
+    {
+        return 'app\presenters\UserPresenter';
     }
 }

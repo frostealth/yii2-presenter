@@ -36,24 +36,22 @@ trait PresentableTrait
      */
     protected function buildPresenter()
     {
-        if (empty($this->presenter)) {
-            throw new PresenterException(strtr(
-                'Please set the {{class}}::$presenter property for creating your presenter.',
-                ['{{class}}' => get_called_class()]
-            ));
-        }
-
-        $presenter = $this->presenter;
+        $presenter = $this->getPresenterClass();
         $presenter = is_string($presenter) ? ['class' => $presenter] : (array)$presenter;
         $presenter = \Yii::createObject($presenter, [$this]);
 
         if (!$presenter instanceof PresenterInterface) {
             throw new PresenterException(strtr(
-                '"{{class}}" must implement "{{interface}}".',
-                ['{{class}}' => get_class($presenter), '{{interface}}' => PresenterInterface::class]
+                '"{{class}}" must implement "frostealth\presenter\interfaces\PresenterInterface".',
+                ['{{class}}' => get_class($presenter)]
             ));
         }
 
         return $presenter;
     }
+
+    /**
+     * @return string|array
+     */
+    abstract protected function getPresenterClass();
 }

@@ -100,9 +100,6 @@ class User extends ActiveRecord implements PresentableInterface
 {
     use PresentableTrait;
     
-    /** @var string|array */
-    protected $presenter = 'app\presenters\UserPresenter';
-    
     /**
      * @inheritdoc
      * @see \yii\base\Arrayable::fields()
@@ -114,6 +111,14 @@ class User extends ActiveRecord implements PresentableInterface
         unset($fields['passwordHash'], $fields['passwordResetToken']);
         
         return $fields;
+    }
+    
+    /**
+     * @return string|array
+     */
+    protected function getPresenterClass()
+    {
+        return 'app\presenters\UserPresenter';
     }
 }
 ```
