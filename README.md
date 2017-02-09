@@ -28,7 +28,7 @@ Here's an example of a presenter.
 namespace app\presenters;
 
 use app\models\User;
-use frostealth\presenter\Presenter;
+use frostealth\yii2\presenter\Presenter;
 
 /**
  * Class ConcreteEntityPresenter
